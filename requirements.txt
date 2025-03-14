@@ -131,7 +131,6 @@ optax==0.2.4
 optree==0.13.1
 orbax-checkpoint==0.9.1
 overrides==7.7.0
-packaging==23.2
 pandas==2.2.3
 pandocfilters==1.5.1
 parso==0.8.4
