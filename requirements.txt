@@ -60,7 +60,6 @@ h11==0.14.0
 h5py==3.12.1
 haversine==2.9.0
 html5lib==1.1
-htmlmin==0.1.12
 httpcore==1.0.5
 https.server==1.2.0
 httpx==0.27.2
