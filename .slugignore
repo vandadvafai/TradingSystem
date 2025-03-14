@@ -1,7 +1,0 @@
-data/
-models/
-logs/
-__pycache__/
-*.pkl
-*.csv
-*.json

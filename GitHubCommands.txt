@@ -1,7 +1,0 @@
-These are the commands for updating to the newest project:
-
-to pull the latest version of the project:          git pull
-to add all the updated files:                       git add .       
-to commit all the added files:                      git commit -m "your commit message"
-to push all the committed files:                    git push
-to switch between branches:                         git checkout "Branch name"
