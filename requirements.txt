@@ -132,7 +132,7 @@ optax==0.2.4
 optree==0.13.1
 orbax-checkpoint==0.9.1
 overrides==7.7.0
-packaging==23.2
+packaging==24.2
 pandas==2.2.3
 pandocfilters==1.5.1
 parso==0.8.4
@@ -181,7 +181,7 @@ rfc3986-validator==0.1.1
 rich==13.9.1
 rpds-py==0.20.0
 scikit-learn==1.5.2
-scipy==1.14.1
+scipy==1.13.1
 seaborn==0.13.2
 Send2Trash==1.8.3
 shapely==2.0.6
@@ -219,7 +219,7 @@ torchvision==0.20.1
 tornado==6.4.1
 tqdm==4.64.1
 traitlets==5.14.3
-typeguard==4.4.2
+typeguard==2.13.3
 types-python-dateutil==2.9.0.20240906
 typing_extensions==4.12.2
 tzdata==2025.1
