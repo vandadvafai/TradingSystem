@@ -3,13 +3,41 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import joblib
 import datetime
+import os
+import subprocess
+import time
 
 def go_live_page():
     st.title("📊 Live Trading Dashboard")
-    st.write("Powered by Machine Learning & SimFin API")
+    st.write("Powered by Machine Learning & SimFin")
+
+    # Define file paths
+    etl_output_path = "data/processed/output.csv"
+    etl_script = "ETL.py"
+    
+    # Check if output.csv exists
+    if not os.path.exists(etl_output_path):
+        st.warning("⚠️ Click the button below to retrieve the data.")
+
+        if st.button("Run ETL and Generate Data"):
+            with st.spinner("Running ETL process... Please wait."):
+                process = subprocess.run(["python3", etl_script], capture_output=True, text=True)
+
+                # Wait for file to be created
+                timeout = 30  # Maximum wait time in seconds
+                start_time = time.time()
+
+                while not os.path.exists(etl_output_path) and (time.time() - start_time) < timeout:
+                    time.sleep(2)  # Check every 2 seconds
+                
+                if os.path.exists(etl_output_path):
+                    st.success("✅ Data file successfully generated! You can now proceed.")
+                    st.experimental_rerun()  # Refresh the page to load the new data
+                else:
+                    st.error("❌ The ETL process did not complete successfully. Check logs for errors.")
+        return  # Exit early to prevent further errors
 
     # Load Merged Data from ETL Output
-    etl_output_path = "data/processed/output.csv"  # Adjust path if necessary
     df_merged = pd.read_csv(etl_output_path)
 
     # Ensure the Date column is in datetime format
