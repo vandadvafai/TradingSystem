@@ -12,7 +12,11 @@ The trading system integrates financial data from SimFin, a financial data provi
 
 Team Members
 
-[Your Team Member Names Here]
+- Clara Sobejano
+- Adrian Soto
+- Adam Kassab
+- Juan Echeverri
+- Vandad Vafai Tabrizi
 
 Project Structure
 
@@ -123,3 +127,4 @@ Deploy the system on a cloud platform for remote access.
 
 Enhance the ML model with deep learning techniques.
 
+# Minor update
