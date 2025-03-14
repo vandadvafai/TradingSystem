@@ -1,60 +1,125 @@
-# Automated Daily Trading System
+Automated Daily Trading System
 
-This repository contains a **multi-page Streamlit application** and accompanying Python scripts to automate daily stock trading predictions. The project is divided into:
+Project Overview
 
-1. **Data Analytics Module**  
-   - ETL scripts (`etl.py`) to process historical stock price data from SimFin.  
-   - ML scripts (`model.py`) to train and predict next-day market movements.  
-   - (Optional) Trading strategy logic (`trading_strategy.py`) for buy/sell/hold decisions.
+This project is an Automated Daily Trading System developed using Python. The system comprises two primary components:
 
-2. **Web-Based Application**  
-   - A Streamlit multi-page app (`streamlit_app.py` and `pages/` directory) that allows real-time data retrieval (via `api_wrapper.py`), displays predictive analytics, and shows trading signals.  
+Data Analytics Module: A machine learning (ML) model that forecasts market movements based on historical stock prices.
 
-## Project Structure
+Web-Based Application: A multi-page Streamlit application that allows users to visualize market data, interact with the predictive model, and execute trading strategies.
 
-```
-your_project/
-├── streamlit_app.py         # Main entry point for the Streamlit web app
-├── pages/
-│   ├── 1_Home.py
-│   ├── 2_Go_Live.py
-├── src/
-│   ├── etl.py               # ETL code
-│   ├── model.py             # ML model code
-│   └── api_wrapper.py       # PySimFin API wrapper
-├── data/
-│   ├── raw/                 # Bulk download from SimFin
-│   └── processed/           # Cleaned/processed data
-└── README.md                # This file
-```
+The trading system integrates financial data from SimFin, a financial data provider, to analyze historical trends and predict future stock price movements.
 
-## Getting Started
+Team Members
 
-1. **Clone the Repository**  
-   ```bash
-   git clone https://github.com/vandadvafai/TradingSystem.git
-   cd TradingSystem
-   ```
+[Your Team Member Names Here]
 
-2. **Run the Streamlit Application**  
-   ```bash
-   streamlit run streamlit_app.py
-   ```
-   - This command opens a local URL in your browser (usually http://localhost:8501).
-   - Explore the pages (Home, Go Live, ML Process, etc.) from the left sidebar.
+Project Structure
 
-3. **Project Usage**  
-   - **Data ETL**: Download data from SimFin (bulk downloads). Place raw files in `data/raw/`. Run or modify `src/etl.py` to preprocess.  
-   - **Model Training**: Adjust and run `src/model.py` to train or update the machine learning model.  
-   - **API Wrapper**: Configure `src/api_wrapper.py` with your SimFin API key.  
-   - **Trading Strategy (Optional)**: Implement custom buy/sell logic in `src/trading_strategy.py`.  
+The repository is organized as follows:
 
-## Notes
+TRADINGSYSTEM/
+│── app_pages/
+│   ├── go_live.py               # Streamlit page for real-time stock tracking
+│   ├── home.py                  # Streamlit homepage
+│   ├── trading_strategy.py       # Streamlit page for visualizing strategies
+│
+│── data/
+│   ├── processed/
+│   │   ├── output.csv            # Processed dataset
+│   ├── raw/
+│   │   ├── us-companies.csv      # List of US companies
+│   │   ├── us-shareprices-daily.csv # Daily share prices
+│
+│── src/
+│   ├── api_wrapper.py            # API wrapper for SimFin
+│   ├── ETL.py                    # Extract, Transform, Load process
+│   ├── model.py                  # ML model for stock prediction
+│   ├── trading_strat.py          # Trading strategy implementation
+│
+│── .env                          # Environment variables (API keys, etc.)
+│── .gitignore                    # Files to be ignored in version control
+│── README.md                     # Project documentation
+│── scaler.pkl                     # Scaler for data normalization
+│── stock_price_predictor.pkl      # Trained ML model
+│── streamlit_app.py               # Main Streamlit app file
 
-- **SimFin API Key**: Make sure to add your SimFin API key in your environment or directly in `api_wrapper.py` headers (take care not to commit secrets to public repos).
-- **Rate Limits**: The free tier of the SimFin API only allows up to 2 requests per second. Built-in delays or caching are recommended if you experience throttling.
-- **Further Improvements**: 
-  - Deploy the app to Streamlit Cloud or a cloud service if you need to share it publicly.  
-  - Add caching to reduce repeated data fetches or large computations.
+Explanation of Each File
 
----
+1. Streamlit App Pages (app_pages/)
+
+home.py: Displays an overview of the trading system and its functionalities.
+
+go_live.py: Allows users to select stocks, retrieve real-time data, and display ML predictions.
+
+trading_strategy.py: Visualizes different trading strategies based on ML model outputs.
+
+2. Data Processing (data/)
+
+raw/us-companies.csv: Contains details of US companies.
+
+raw/us-shareprices-daily.csv: Historical share prices of selected companies.
+
+processed/output.csv: Cleaned dataset after ETL processing.
+
+3. Source Code (src/)
+
+api_wrapper.py: Python wrapper to retrieve financial data from SimFin.
+
+ETL.py: Extracts raw financial data, transforms it, and loads it into the system for analysis.
+
+model.py: Builds and trains an ML model to predict stock market movements.
+
+trading_strat.py: Implements different trading strategies based on the ML model’s output.
+
+4. Other Files
+
+.env: Stores API keys and other environment variables (not included in version control).
+
+scaler.pkl: Pre-trained scaler used to normalize data before predictions.
+
+stock_price_predictor.pkl: The trained ML model used for real-time predictions.
+
+streamlit_app.py: Main script to run the Streamlit web application.
+
+How to Run the Project
+
+Step 1: Install Dependencies
+
+Ensure you have Python 3.8+ installed, then install the required libraries:
+
+pip install -r requirements.txt
+
+Step 2: Run the ETL Pipeline
+
+Before using the Streamlit application, process the raw data by running:
+
+python src/ETL.py
+
+Step 3: Train the Machine Learning Model
+
+Run the following command to train and save the model:
+
+python src/model.py
+
+Step 4: Start the Streamlit Web Application
+
+Once the data is processed and the model is trained, launch the Streamlit app:
+
+streamlit run streamlit_app.py
+
+Key Features
+
+✅ Real-time market analysis using financial data from SimFin
+✅ Predictive analytics leveraging ML to forecast stock movements
+✅ User-friendly interface built with Streamlit
+✅ Automated trading strategies based on model outputs
+
+Future Enhancements
+
+Implement backtesting for trading strategies.
+
+Deploy the system on a cloud platform for remote access.
+
+Enhance the ML model with deep learning techniques.
+
