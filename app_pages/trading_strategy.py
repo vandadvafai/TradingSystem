@@ -2,9 +2,6 @@ import streamlit as st
 import pandas as pd
 import sys
 import os
-# Import necessary modules
-from trading_strat import TradingStrategy
-from api_wrapper import api_wrapper
 
 ### I want to use my api_wrapper and trading_strat code to design a UI for the users to be able to 
 ### use the model I've created to see how it will work. Give me a step by step guide on how to 
@@ -12,6 +9,9 @@ from api_wrapper import api_wrapper
 
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
+# Import necessary modules
+from trading_strat import TradingStrategy
+from api_wrapper import api_wrapper
 
 def trading_strategy_page():
     st.title("📈 Trading Strategy Simulation")

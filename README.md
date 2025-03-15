@@ -101,7 +101,14 @@ Run the following command to train and save the model:
 python src/model.py
 ```
 
-### **Step 4: Start the Streamlit Web Application**
+### **Step 4: Check if the API is working**
+Run the following command to check if the API is working:
+
+```bash
+python src/api_wrapper.py
+```
+
+### **Step 5: Start the Streamlit Web Application**
 Once the data is processed and the model is trained, launch the Streamlit app:
 
 ```bash
