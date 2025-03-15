@@ -3,6 +3,9 @@ import joblib
 import logging
 from api_wrapper import api_wrapper
 
+### I want to show the users a trading strategy that what would happen if they use our model to 
+### start trading with €1000. 
+
 class TradingStrategy:
     def __init__(self, model_path='stock_price_predictor.pkl', scaler_path='scaler.pkl', initial_cash=1000):
         self.model = joblib.load(model_path)

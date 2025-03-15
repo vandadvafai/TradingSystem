@@ -6,6 +6,11 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 import joblib
 
+### Prompt: I am looking to build a very simple model that uses the data of the output file I created from the ETL
+### to predict whether at this moment the user should buy the stock or sell it. Guide me through the steps of how
+### to build this model.
+
+
 # Load historical stock data (example CSV file)
 data = pd.read_csv("/Users/vandad/Desktop/TradingSystem/data/processed/output.csv")
 

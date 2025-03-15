@@ -1,5 +1,8 @@
 import streamlit as st
 
+### I want to design my own navigation dashboard. Please instruct me on how to structure my files and write 
+### my code on doing that.
+
 # Import your page functions directly (adjust the import paths as needed)
 from app_pages.home import home_page
 from app_pages.go_live import go_live_page

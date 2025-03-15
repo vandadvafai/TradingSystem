@@ -1,5 +1,9 @@
 import streamlit as st
 
+### This will be the homepage for my project on streamlit. Please give me an short description so that I 
+### could be displaying on it.
+
+
 def home_page():
     st.title("📈 Automated Trading System")
     

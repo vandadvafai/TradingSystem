@@ -4,12 +4,16 @@ import matplotlib.pyplot as plt
 import joblib
 import datetime
 
+### I have programmed the functions below for my program. Try to add any piece of code that will be taking
+### care of error handling so that my program doesn't break if an error happens during runtime.
+
+
 def go_live_page():
     st.title("📊 Live Trading Dashboard")
     st.write("Powered by Machine Learning & SimFin API")
 
     # Load Merged Data from ETL Output
-    etl_output_path = "data/processed/output.csv"  # Adjust path if necessary
+    etl_output_path = "data/processed/output.csv"  
     df_merged = pd.read_csv(etl_output_path)
 
     # Ensure the Date column is in datetime format

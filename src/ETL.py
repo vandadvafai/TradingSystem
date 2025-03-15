@@ -7,6 +7,12 @@ from sklearn.metrics import accuracy_score, classification_report
 import pickle
 import numpy as np
 
+### The code below is an ETL process that I have designed that will take care of the ETL process for the
+### two large datasets in my program. I want to design this into a class which has functions so that
+### I could have a more cohesive and understandable code. Help me generate a class for the code below.
+
+
+
 class ETL:
     def __init__(self, companies_file, shareprices_file, output_file, top_tickers=None):
         self.companies_file = companies_file

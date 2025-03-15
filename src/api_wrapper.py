@@ -4,6 +4,9 @@ import simfin as sf
 import pandas as pd
 import logging
 
+### I will be using the SIMFIN API in my program. I want to be able to just extract the tickers and dates
+### for the stock prices to be using them in the function. How do I do that?
+
 # Load environment variables
 load_dotenv()
 
