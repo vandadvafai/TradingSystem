@@ -1,3 +1,4 @@
 data/raw/us-companies.csv
 data/raw/us-shareprices-daily.csv
 data/processed/output.csv
+.env
