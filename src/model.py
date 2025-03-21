@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -6,13 +7,12 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 import joblib
 
-### Prompt: I am looking to build a very simple model that uses the data of the output file I created from the ETL
-### to predict whether at this moment the user should buy the stock or sell it. Guide me through the steps of how
-### to build this model.
+# Get the base directory of the project
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-
-# Load historical stock data (example CSV file)
-data = pd.read_csv("/Users/vandad/Desktop/TradingSystem/data/processed/output.csv")
+# Load historical stock data
+data_file = os.path.join(BASE_DIR, 'data/processed/output.csv')
+data = pd.read_csv(data_file)
 
 # Feature Engineering: Creating target variable (1 if price increased, 0 otherwise)
 data['Target'] = (data['Close'].shift(-1) > data['Close']).astype(int)
@@ -44,13 +44,13 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f'Model Accuracy: {accuracy:.2f}')
 
 # Save model and scaler
-joblib.dump(model, 'stock_price_predictor.pkl')
-joblib.dump(scaler, 'scaler.pkl')
+joblib.dump(model, os.path.join(BASE_DIR, 'stock_price_predictor.pkl'))
+joblib.dump(scaler, os.path.join(BASE_DIR, 'scaler.pkl'))
 
 def predict_next_day(prices_df):
     """Loads the trained model and scaler, then predicts the next day's movement."""
-    model = joblib.load("stock_price_predictor.pkl")
-    scaler = joblib.load("scaler.pkl")
+    model = joblib.load(os.path.join(BASE_DIR, "stock_price_predictor.pkl"))
+    scaler = joblib.load(os.path.join(BASE_DIR, "scaler.pkl"))
 
     features = ['Open', 'High', 'Low', 'Close', 'Volume']
     X = prices_df[features].iloc[-1:].values  # Get the latest row for prediction
