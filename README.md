@@ -105,6 +105,7 @@ python src/model.py
 ```
 
 ### **Step 4: Check if the API is working**
+Create a .env file and paste your API Key the variable SIMFIN_API_KEY= your api key
 Run the following command to check if the API is working:
 
 ```bash

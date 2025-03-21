@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score
 import joblib
 
 # Get the base directory of the project
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Load historical stock data
 data_file = os.path.join(BASE_DIR, 'data/processed/output.csv')

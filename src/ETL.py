@@ -54,7 +54,8 @@ if __name__ == '__main__':
     load_dotenv()
 
     # Get the base directory of the project
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
     # Define file paths relative to the project folder
     companies_file = os.path.join(BASE_DIR, 'data/raw/us-companies.csv')
