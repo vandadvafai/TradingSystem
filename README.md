@@ -87,6 +87,9 @@ Ensure you have **Python 3.8+** installed, then install the required libraries:
 pip install -r requirements.txt
 ```
 
+Also please download the datasets 'us-companies.csv' and 'us-shareprices-daily.csv' from SimFin
+and paste them in `data/raw`.
+
 ### **Step 2: Run the ETL Pipeline**
 Before using the Streamlit application, process the raw data by running:
 
